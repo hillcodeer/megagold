@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaGold — Эксклюзивная коллекция украшений</title>
+  <style>
+    /* Новые премиальные шрифты */
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap');
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.7; }
+    
+    /* Шапка (Темно-синий + Серебро) */
+    header { position: absolute; top: 0; left: 0; right: 0; padding: 30px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
+    .logo { font-family: 'Cinzel', serif; font-size: 28px; font-weight: 700; color: #cbd5e1; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; }
+    .nav-links a { color: #e2e8f0; text-decoration: none; margin-left: 25px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+    .nav-links a:hover { color: #94a3b8; }
+
+    /* Главный экран */
+    .hero { height: 100vh; background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.9)), url('1.jpg') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 20px; }
+    .hero-content h1 { font-family: 'Cinzel', serif; font-size: 56px; color: #f8fafc; margin-bottom: 20px; font-weight: 500; letter-spacing: 2px; }
+    .hero-content p { font-size: 18px; color: #94a3b8; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; }
+    .btn { display: inline-block; background: transparent; color: #e2e8f0; padding: 15px 40px; border: 1px solid #cbd5e1; text-decoration: none; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; transition: 0.4s; }
+    .btn:hover { background: #e2e8f0; color: #0f172a; }
+
+    /* О бренде (Текст доверия) */
+    .about { padding: 100px 20px; max-width: 800px; margin: 0 auto; text-align: center; background: #0f172a; }
+    .about h2 { font-family: 'Cinzel', serif; font-size: 38px; color: #f8fafc; margin-bottom: 30px; }
+    .about p { font-size: 16px; color: #94a3b8; margin-bottom: 20px; font-weight: 300; }
+
+    /* БЛОК ИНСТАГРАМ (Посередине) */
+    .insta-section { background: #1e293b; padding: 60px 20px; text-align: center; border-top: 1px solid #334155; border-bottom: 1px solid #334155; }
+    .insta-section h2 { font-family: 'Cinzel', serif; font-size: 32px; color: #f8fafc; margin-bottom: 15px; }
+    .insta-section p { color: #94a3b8; margin-bottom: 30px; font-size: 16px; }
+    
+    /* Красивая кнопка Инстаграм */
+    .insta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; padding: 16px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 16px; letter-spacing: 1px; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 15px rgba(220, 39, 67, 0.4); }
+    .insta-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(220, 39, 67, 0.6); }
+    .insta-btn svg { width: 24px; height: 24px; fill: currentColor; }
+
+    /* Галерея (Наши товары) */
+    .gallery { padding: 80px 20px 100px; max-width: 1200px; margin: 0 auto; background: #0f172a; }
+    .gallery-title { text-align: center; font-family: 'Cinzel', serif; font-size: 36px; color: #f8fafc; margin-bottom: 50px; }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .grid-item { position: relative; overflow: hidden; aspect-ratio: 1/1; border: 1px solid #334155; padding: 10px; background: #1e293b; }
+    .grid-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .grid-item:hover img { transform: scale(1.05); }
+
+    /* Контакты */
+    .contact { background: #1e293b; padding: 80px 20px; text-align: center; }
+    .contact h2 { font-family: 'Cinzel', serif; font-size: 36px; color: #f8fafc; margin-bottom: 30px; }
+    
+    .contact-info { max-width: 600px; margin: 0 auto 30px; color: #94a3b8; font-size: 18px; }
+    .contact-info p { margin-bottom: 15px; }
+    .contact-info strong { color: #e2e8f0; }
+
+    footer { text-align: center; padding: 30px; background: #0b1120; color: #64748b; font-size: 12px; letter-spacing: 1px; }
+
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 38px; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">MegaGold</a>
+    <div class="nav-links">
+      <a href="#about">О нас</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#gallery">Товары</a>
+      <a href="#contact">Контакты</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Эксклюзивная коллекция</h1>
+      <p>Золото и бриллианты премиального качества</p>
+      <a href="#gallery" class="btn">Посмотреть товары</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>Ваше идеальное украшение</h2>
+    <p>MegaGold — это тщательно отобранная коллекция украшений. Мы предлагаем вам только лучшие изделия из золота 585 и 750 пробы, инкрустированные бриллиантами и драгоценными камнями.</p>
+    <p>Каждое украшение в нашем каталоге проверено на подлинность и высокое качество. Мы помогаем найти идеальный подарок или пополнить вашу личную коллекцию.</p>
+  </section>
+
+  <!-- Блок Инстаграм (Посередине) -->
+  <section class="insta-section" id="instagram">
+    <h2>Больше товаров в нашем Instagram</h2>
+    <p>Свежие поступления, новые коллекции и детальные видеообзоры украшений</p>
+    
+    <!-- Ссылка на инстаграм (проверь, правильная ли ссылка) -->
+    <a href="https://www.instagram.com/megagold585/" target="_blank" class="insta-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      Перейти в Instagram
+    </a>
+  </section>
+
+  <!-- Галерея "Наши товары" -->
+  <section class="gallery" id="gallery">
+    <h2 class="gallery-title">Наши товары</h2>
+    <div class="grid">
+      <!-- Замени 2.jpg, 3.jpg и т.д. на названия твоих обрезанных фотографий -->
+      <div class="grid-item"><img src="2.jpg" alt="Украшение MegaGold"></div>
+      <div class="grid-item"><img src="3.jpg" alt="Украшение MegaGold"></div>
+      <div class="grid-item"><img src="4.jpg" alt="Украшение MegaGold"></div>
+      <div class="grid-item"><img src="5.jpg" alt="Украшение MegaGold"></div>
+      <div class="grid-item"><img src="6.jpg" alt="Украшение MegaGold"></div>
+      <div class="grid-item"><img src="7.jpg" alt="Украшение MegaGold"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Наш адрес и контакты</h2>
+    
+    <div class="contact-info">
+      <!-- ВПИШИ СЮДА ПРАВИЛЬНЫЙ АДРЕС -->
+      <p><strong>Адрес:</strong> г.Ош,ТЦ МЕГАПОЛИС 3- этаж,место А-1
+( на против Ош Базар)</p>
+      
+      <!-- ВПИШИ СЮДА ПРАВИЛЬНЫЙ НОМЕР ВАТСАПА (без пробелов и плюсов для ссылки) -->
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/996550013401" style="color: #e2e8f0; text-decoration: none;">Тел:+996550013401,
+Тел: 0557010255</a></p>
+    </div>
+    
+    <a href="https://wa.me/996557010255" class="btn" style="border-color: #94a3b8;">Написать в WhatsApp</a>
+  </section>
+
+  <footer>
+    © 2026 MegaGold. Все права защищены.
+  </footer>
+</body>
+</html>
